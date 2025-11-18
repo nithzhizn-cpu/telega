@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>SpySignal v2 — E2EE Messenger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="card">
+    <h2>SpySignal v2</h2>
+    <p class="small">E2EE: ECC (X25519) + AES‑256‑GCM. Ключі зберігаються тільки локально в браузері.</p>
+    <label class="small">Позивний (username):</label>
+    <input id="username" placeholder="AgentFox" />
+    <button onclick="registerUser()">Підключитись</button>
+    <div id="me-info" class="small"></div>
+    <div id="backend-status" class="small"></div>
+  </div>
+
+  <div class="card">
+    <h3>Контакти</h3>
+    <input id="search" placeholder="Пошук за username" oninput="searchUsers()" />
+    <div id="results"></div>
+  </div>
+
+  <div class="card">
+    <h3>Чат</h3>
+    <div id="peer-label" class="small">Не вибрано співрозмовника</div>
+    <div id="chat" class="chat-window"></div>
+    <textarea id="msg" placeholder="Повідомлення..."></textarea>
+    <button onclick="sendMessage()">Надіслати</button>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
